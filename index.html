@@ -528,8 +528,9 @@ const SCREENS = [
   { id:'tickets' },
   { id:'naofui', title:'O que pesou na decisão', lead:'Essas perguntas são pra quem não foi dessa vez.', qs:[
     { id:'nf_show', type:'radio', label:'Qual show você queria ver?', opts:['Rio de Janeiro · 10/11','São Paulo · 12/11','São Paulo · 13/11','Qualquer um deles'] },
-    { id:'nf_motivos', type:'check', max:3, label:'O que impediu você de ir?', hint:'Escolha até 3 opções.', opts:['Preço do ingresso','Custo da viagem (transporte e hospedagem)','Ingressos esgotados','Preço alto na revenda','Distância ou tempo de viagem','Não consegui folga no trabalho ou nos estudos','Não tinha com quem ir','Outro'] },
-    { id:'nf_teto', type:'radio', label:'Pensando também nos gastos de viagem, até quanto você pagaria no ingresso pra conseguir ir?', opts:['Até R$ 200','De R$ 201 a R$ 350','De R$ 351 a R$ 500','De R$ 501 a R$ 700','Mais de R$ 700'] },
+    { id:'nf_motivos', type:'check', max:3, label:'O que impediu você de ir?', hint:'Escolha até 3 opções.', opts:['Preço do ingresso','Custo da viagem (transporte e hospedagem)','Ingressos esgotados','Preço alto na revenda','Distância ou tempo de viagem','Não consegui folga no trabalho ou nos estudos','Não tinha com quem ir','Não tinha limite no cartão pra parcelar','Outro'] },
+    { id:'nf_teto', type:'money', label:'Pensando na sua realidade, quanto você acredita que conseguiria pagar no ingresso?', hint:'Um valor aproximado já ajuda. Não existe resposta certa.', flags:['Não sei dizer'] },
+    { id:'nf_teto_viagem', type:'money', label:'E no resto da viagem, quanto conseguiria gastar somando transporte, hospedagem e alimentação?', hint:'Considere a ida e a volta. Um valor aproximado já ajuda.', flags:['Só daria se o show fosse na minha cidade','Não sei dizer'] },
     { id:'nf_perto', type:'radio', label:'Se o show tivesse acontecido na sua cidade ou mais perto, você teria ido?', opts:['Sim, com certeza','Talvez','Não'] },
     { id:'nf_renda', type:'radio', optional:true, label:'Qual é a faixa da sua renda mensal?', hint:'Se é a sua família que banca esse tipo de gasto, considere a renda dela. Serve só pra comparar o peso dos custos no orçamento.', opts:['Até R$ 1.500','De R$ 1.501 a R$ 3.000','De R$ 3.001 a R$ 5.000','De R$ 5.001 a R$ 8.000','De R$ 8.001 a R$ 12.000','Acima de R$ 12.000','Prefiro não responder'] }
   ]},
@@ -630,8 +631,11 @@ function ticketScreens(){
     const qs = TICKET_QS.map(q => {
       const def = Object.assign({}, q, q.id === 'setor' ? { opts:s.sectors } : {});
       const name = k + '_' + q.id;
+      const pagou = g => !/^Não paguei/.test(String(g(k + '_valor')));
       const when = q.id === 'parcelas'
-        ? g => g('shows').includes(k) && /parcelado/.test(g(k + '_pagamento'))
+        ? g => g('shows').includes(k) && pagou(g) && /parcelado/.test(g(k + '_pagamento'))
+        : q.id === 'pagamento'
+        ? g => g('shows').includes(k) && pagou(g)
         : g => g('shows').includes(k);
       REG.push({ name, def, when, show:k });
       return qHTML(def, name, (k === 'rio' ? 'RJ' : 'SP') + ' · ' + s.date);
