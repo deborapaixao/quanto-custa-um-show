@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quanto custa ver um show?</title>
+<meta name="description" content="Uma pesquisa com fãs da Hayley Williams sobre o que pesa na hora de ir a um show.">
+<meta property="og:title" content="Quanto custa ver um show?">
+<meta property="og:description" content="Uma pesquisa com fãs da Hayley Williams sobre o que pesa na hora de ir a um show. Anônima, leva uns 4 minutos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECEAE5;
+  --sheet:#F8F7F4;
+  --ink:#161514;
+  --riso:#FF3D9A;
+  --muted:#5C5852;
+  --rule:#C9C4BC;
+  --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+  --body:'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+/* layout: coluna única em telas; capa de publicação independente, uma tela por bloco, ingressos como canhotos, recibo no fim */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;min-height:100%}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px}
+[hidden]{display:none !important}
+
+/* capa */
+.mast{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);padding:18px 0 0}
+.mast::after{content:"";position:absolute;right:-60px;bottom:-60px;width:280px;height:280px;
+  background-image:radial-gradient(var(--riso) 1.7px, transparent 2.1px);background-size:8px 8px;
+  -webkit-mask-image:radial-gradient(circle at 65% 65%, #000 0, transparent 68%);
+  mask-image:radial-gradient(circle at 65% 65%, #000 0, transparent 68%);pointer-events:none}
+.mast > .wrap{position:relative;z-index:1}
+.band{position:relative;z-index:1;margin-top:26px;background:var(--riso);color:var(--ink);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px max(18px, calc(50% - 302px));font:400 1.25rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;border-top:3px solid var(--ink)}
+.band span{max-width:640px}
+.burst{position:absolute;z-index:2;top:50px;right:max(10px, calc(50% - 320px));width:80px;height:80px;transform:rotate(12deg)}
+.burst polygon{fill:var(--riso);stroke:var(--ink);stroke-width:2}
+.burst text{font:400 17px var(--display);fill:var(--ink);letter-spacing:.02em}
+.burst text.sm{font:600 6.3px var(--mono);letter-spacing:.06em}
+.mast-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 0;font:600 .72rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(3rem,14vw,6rem);line-height:.9;margin:22px 0 12px;text-shadow:4px 4px 0 var(--riso);text-wrap:balance}
+.kicker{font:800 1.15rem/1.25 var(--body);margin:0;max-width:24ch;text-wrap:balance}
+.stamp{display:inline-block;margin-top:18px;border:1.5px solid var(--ink);padding:5px 10px;font:600 .72rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;transform:rotate(-2deg);background:var(--paper)}
+.intro{padding-top:24px;padding-bottom:4px}
+.intro p{margin:0 0 14px;max-width:62ch}
+.intro .lede{font:400 .95rem/1.5 var(--mono);color:var(--muted);margin:0 0 4px}
+mark.todo{background:var(--riso);color:var(--ink);padding:0 5px;font-family:var(--mono);font-size:.88em}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);border:1.5px solid var(--ink);margin:18px 0 8px;background:var(--sheet)}
+.facts div{padding:10px 12px;border-right:1.5px solid var(--ink);display:flex;flex-direction:column;gap:2px}
+.facts div:last-child{border-right:0}
+.facts b{font:400 1.2rem/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.facts span{font:400 .76rem/1.3 var(--mono);color:var(--muted)}
+.small{font:400 .82rem/1.5 var(--mono);color:var(--muted);margin:12px 0 0;max-width:60ch}
+.start-q{padding-top:14px;padding-bottom:40px}
+.start-go{margin-top:6px}
+.consent{font:400 .78rem/1.5 var(--mono);color:var(--muted);margin:4px 0 12px;max-width:60ch}
+
+/* barra de etapas */
+.progress{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1.5px solid var(--ink)}
+.progress .wrap{display:flex;align-items:center;gap:12px;padding-top:10px;padding-bottom:10px}
+.bar{flex:1;height:8px;background:var(--rule)}
+.bar span{display:block;height:100%;width:0;background:var(--riso);transition:width .25s}
+.pct{font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* telas */
+.screen{padding-top:26px;padding-bottom:30px}
+.sc-kick{display:none}
+#startQ .qn{display:none}
+.sc-title{font:400 clamp(2rem,8vw,2.8rem)/.95 var(--display);text-transform:uppercase;margin:8px 0 18px;text-shadow:2px 2px 0 var(--riso);text-wrap:balance}
+.sc-lead{font:400 .9rem/1.5 var(--mono);color:var(--muted);margin:-8px 0 18px;max-width:58ch}
+
+/* ingresso */
+.tk-head{position:relative;background:var(--ink);color:var(--paper);padding:16px 22px 18px;margin:6px 0 18px}
+.tk-head::before,.tk-head::after{content:"";position:absolute;bottom:-11px;width:22px;height:22px;border-radius:50%;background:var(--paper)}
+.tk-head::before{left:-11px}
+.tk-head::after{right:-11px}
+.tk-n{display:inline-block;background:var(--riso);color:var(--ink);font:600 .7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;padding:4px 7px}
+.tk-city{font:400 2.2rem/1 var(--display);text-transform:uppercase;color:var(--riso);margin:10px 0 4px}
+.tk-meta{font:600 .74rem var(--mono);text-transform:uppercase;letter-spacing:.1em;margin:0}
+.t-copy{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 14px;padding:10px 12px;border:1.5px dashed var(--rule);font:400 .84rem/1.4 var(--mono)}
+
+/* pergunta como cartão */
+.q{background:var(--sheet);border:1.5px solid var(--rule);padding:18px 18px 20px;margin:0 0 12px;transition:border-color .12s, box-shadow .12s}
+.q:focus-within{border-color:var(--ink);box-shadow:inset 4px 0 0 var(--riso)}
+.q-lbl{display:flex;gap:12px;align-items:flex-start;font:700 1.06rem/1.4 var(--body);margin:0 0 4px;text-wrap:pretty}
+.qn{font:600 .78rem/1 var(--mono);color:var(--paper);background:var(--ink);padding:4px 6px;flex:none;min-width:26px;text-align:center;margin-top:3px;font-variant-numeric:tabular-nums}
+.qn.sub{background:transparent;color:var(--muted);border:1.5px solid var(--rule);padding:3px 5px}
+.tag{font:600 .66rem var(--mono);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--muted);color:var(--muted);padding:1px 5px;margin-left:8px;white-space:nowrap;vertical-align:2px}
+.hint{font:400 .84rem/1.45 var(--mono);color:var(--muted);margin:0 0 4px 38px;max-width:58ch}
+.ctl{margin-top:14px}
+
+/* opções */
+.opts.list{display:flex;flex-direction:column;gap:8px}
+.opts.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.opt{position:relative;cursor:pointer;display:block}
+.opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.opt span{display:flex;align-items:center;gap:12px;min-height:46px;border:1.5px solid var(--rule);padding:10px 14px;background:var(--paper);font:500 .96rem/1.3 var(--body);transition:border-color .1s}
+.opt span::before{content:"";flex:none;width:18px;height:18px;border:1.5px solid var(--muted);border-radius:50%;background:var(--sheet)}
+.opt.box span::before{border-radius:0}
+.opt:hover span{border-color:var(--ink)}
+.opt input:checked + span{background:var(--ink);color:var(--paper);border-color:var(--ink);font-weight:600}
+.opt input:checked + span::before{background:var(--riso);border-color:var(--riso);box-shadow:inset 0 0 0 3px var(--ink)}
+.opt.box input:checked + span::before{box-shadow:none}
+.opt input:focus-visible + span{outline:3px solid var(--riso);outline-offset:2px}
+.opts.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cards .opt span{position:relative;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:4px;min-height:100px;padding:14px;border-color:var(--ink)}
+.cards .opt span::before{position:absolute;top:12px;right:12px;width:20px;height:20px}
+.cards .opt b{font:400 1.35rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em;padding-right:26px}
+.cards .opt small{font:400 .76rem/1.3 var(--mono)}
+.cards .opt input:checked + span{box-shadow:3px 3px 0 var(--riso)}
+.flags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.flags:empty{display:none}
+.flags .opt span{min-height:38px;font:500 .8rem/1.2 var(--mono);padding:6px 12px;border-style:dashed}
+.flags .opt input:checked + span{border-style:solid}
+
+input[type=text], select, textarea{width:100%;border:1.5px solid var(--rule);border-radius:0;background:var(--paper);color:var(--ink);padding:12px 14px;min-height:50px;font:400 1rem/1.4 var(--body);-webkit-appearance:none;appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+textarea{min-height:120px;resize:vertical}
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible{outline:3px solid var(--riso);outline-offset:2px}
+.money{display:flex;max-width:280px}
+.money .cur{font:600 .9rem var(--mono);background:var(--ink);color:var(--paper);padding:0 14px;display:flex;align-items:center}
+.money input{font:600 1.15rem/1.3 var(--mono);font-variant-numeric:tabular-nums}
+.money input::placeholder{font-weight:400;color:#9A958D}
+.money input{caret-color:var(--riso)}
+.money-tip{font:400 .78rem/1.4 var(--mono);color:var(--muted);margin:0 0 8px}
+.echo{margin:8px 0 0;font:600 .84rem/1.4 var(--mono);color:var(--ink);background:var(--paper);border-left:3px solid var(--riso);padding:6px 10px;width:fit-content;max-width:100%}
+.money input:disabled{opacity:.35}
+
+.miss,.limit{display:none;margin:12px 0 0;width:fit-content;background:var(--riso);color:var(--ink);font:600 .74rem var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 8px}
+.q.missing{border-color:var(--riso);box-shadow:inset 4px 0 0 var(--riso)}
+.q.missing .miss, .q.at-limit .limit{display:block !important}
+.q{position:relative}
+.q-chip{position:absolute;top:-1px;right:-1px;background:var(--riso);color:var(--ink);font:600 .66rem/1 var(--mono);letter-spacing:.06em;padding:5px 7px}
+.q-chip + .q-lbl{padding-right:62px}
+.detail{margin-top:10px;padding:10px 12px;border-left:3px solid var(--riso);background:var(--paper)}
+.detail-lbl{display:block;font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px}
+.detail input{background:var(--sheet)}
+.note{border-left:4px solid var(--riso);background:var(--sheet);padding:12px 14px;font:400 .86rem/1.5 var(--mono);margin:0 0 14px}
+
+/* recibo */
+.receipt{background:var(--sheet);border:1.5px solid var(--ink);padding:18px 18px 20px;font-family:var(--mono);font-size:.9rem}
+.rc-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 6px;padding-bottom:8px;border-bottom:1.5px dashed var(--ink);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.74rem}
+.rc-status{color:var(--muted);text-transform:none;letter-spacing:0}
+.rc-status.ok{color:var(--ink);background:var(--riso);padding:1px 6px}
+.rc-lines{list-style:none;margin:0;padding:0}
+.rc-line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;width:100%;padding:9px 0;margin:0;background:none;border:0;border-bottom:1px dotted var(--rule);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.rc-line:hover span{text-decoration:underline}
+.rc-line b{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rc-line b.muted{color:var(--muted);font-weight:400}
+.rc-total{display:flex;justify-content:space-between;margin:8px 0 0;padding-top:10px;border-top:1.5px dashed var(--ink);font-size:1.08rem;font-weight:700;font-variant-numeric:tabular-nums}
+.rc-msg{font:400 .84rem/1.5 var(--mono);color:var(--muted);margin:16px 0 0;max-width:56ch}
+
+/* navegação */
+.nav{position:sticky;bottom:0;z-index:5;background:var(--paper);border-top:1.5px solid var(--ink);padding-bottom:env(safe-area-inset-bottom)}
+.nav .wrap{display:flex;gap:10px;padding-top:10px;padding-bottom:12px;flex-wrap:wrap}
+.nav-err{flex-basis:100%;margin:0;font:600 .76rem/1.4 var(--mono);color:var(--ink);background:var(--riso);padding:6px 10px}
+.btn{font:700 1rem/1 var(--body);border:1.5px solid var(--ink);padding:14px 18px;cursor:pointer;min-height:50px}
+.btn-back{background:var(--paper);color:var(--ink)}
+.btn-go{flex:1;background:var(--riso);color:var(--ink);font:400 1.35rem/1 var(--display);text-transform:uppercase;letter-spacing:.03em;box-shadow:3px 3px 0 var(--ink)}
+.btn-go:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn-go[disabled]{opacity:.6;cursor:wait}
+.mini{font:600 .76rem var(--mono);text-transform:uppercase;letter-spacing:.06em;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);padding:7px 10px;cursor:pointer}
+.mini:hover{background:var(--ink);color:var(--paper)}
+
+/* agradecimento */
+.thanks{padding-top:40px;padding-bottom:60px}
+body.stage{background:radial-gradient(ellipse 120% 60% at 50% 0%, rgba(230,30,20,.55), rgba(230,30,20,0) 70%), radial-gradient(ellipse 80% 40% at 50% 100%, rgba(255,61,154,.25), rgba(255,61,154,0) 70%), #150505;color:var(--paper)}
+body.stage .thanks h2{color:var(--paper)}
+body.stage .thanks p{color:#EBD9D6}
+body.stage .gif-slot{border-color:var(--paper);box-shadow:6px 6px 0 var(--riso)}
+body.stage .about{border-top-color:var(--riso);color:#BFA9A6}
+body.stage .about b{color:var(--paper)}
+body.stage .thanks details{border-color:#BFA9A6}
+body.stage .thanks pre{color:var(--ink)}
+body.stage .note{color:var(--ink)}
+.stage-kick{display:none;font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--riso);margin:0 0 14px}
+body.stage .stage-kick{display:block}
+.thanks h2{font:400 clamp(3rem,14vw,5.2rem)/.9 var(--display);text-transform:uppercase;margin:0 0 18px;text-shadow:4px 4px 0 var(--riso)}
+.thanks p{max-width:60ch;margin:0 0 14px}
+.gif-slot{width:min(100%,340px);aspect-ratio:16/9;margin:6px 0 30px 4px;border:1.5px solid var(--ink);background:var(--ink);box-shadow:6px 6px 0 var(--riso);transform:rotate(-2deg);overflow:hidden}
+.gif-slot video{width:100%;height:100%;object-fit:cover;display:block}
+.thanks details{margin-top:22px;border:1.5px dashed var(--ink);padding:10px 12px}
+.thanks summary{cursor:pointer;font:600 .8rem var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.thanks pre{overflow-x:auto;font:400 .74rem/1.45 var(--mono);background:var(--sheet);padding:12px;margin:10px 0 0;border:1px solid var(--rule)}
+
+.about{border-top:3px solid var(--ink);padding:16px 0 30px;font:400 .76rem/1.6 var(--mono);color:var(--muted)}
+.about b{color:var(--ink);text-transform:uppercase;letter-spacing:.1em}
+
+
+/* modo pesquisa encerrada */
+.cl{padding-top:22px;padding-bottom:20px}
+.cl-lede{font:500 1.08rem/1.5 var(--body);margin:0 0 12px;max-width:56ch}
+.cl-flag{font:400 .8rem/1.5 var(--mono);border:1.5px dashed var(--ink);padding:8px 12px;margin:0 0 20px}
+.chap-nav{display:grid;gap:8px;margin:0 0 10px}
+.chap-nav button{display:flex;align-items:center;gap:14px;text-align:left;background:var(--sheet);border:1.5px solid var(--ink);padding:12px 14px;cursor:pointer;font:600 1rem var(--body);color:var(--ink)}
+.chap-nav button:hover{box-shadow:3px 3px 0 var(--riso)}
+.chap-nav b{font:400 1.6rem/1 var(--display);color:var(--riso);text-shadow:1px 1px 0 var(--ink)}
+.cl-sec{padding:40px 0 8px;border-top:1.5px dashed var(--rule);margin-top:32px}
+.cl-num{font:400 3.4rem/.8 var(--display);margin:0;text-shadow:2px 2px 0 var(--riso)}
+.cl-h{font:400 clamp(2rem,8vw,2.7rem)/.95 var(--display);text-transform:uppercase;margin:10px 0 14px;text-wrap:balance}
+.cl-h3{font:800 1rem var(--body);text-transform:uppercase;letter-spacing:.04em;margin:28px 0 12px;border-bottom:2px solid var(--ink);padding-bottom:4px;display:inline-block}
+.cl-p{margin:0 0 16px;max-width:58ch}
+.cl-small{font:400 .8rem/1.5 var(--mono);color:var(--muted);margin:8px 0 0}
+.cl-tag{display:inline-block;background:var(--ink);color:var(--paper);font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;margin:0 0 14px}
+.cl-btn{width:100%;margin-top:8px}
+.cl-link{display:block;text-align:center;text-decoration:none;margin-top:20px}
+.cl-facts{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);background:var(--sheet);margin:0 0 16px}
+.cl-facts div{padding:12px;border-right:1.5px solid var(--ink);display:flex;flex-direction:column;gap:4px}
+.cl-facts div:last-child{border-right:0}
+.cl-facts b{font:400 1.9rem/1 var(--display)}
+.cl-facts span{font:400 .76rem/1.35 var(--mono);color:var(--muted)}
+.cl-receipts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:8px 0 22px}
+.cl-rc{background:var(--sheet);border:1.5px solid var(--ink);padding:14px 14px 22px;font-family:var(--mono);font-size:.8rem;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/12px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/12px 100%}
+.cl-rc-a{transform:rotate(-1deg)}
+.cl-rc-b{transform:rotate(1deg)}
+.cl-rc-top{display:flex;justify-content:space-between;font-size:.64rem;text-transform:uppercase;letter-spacing:.08em;border-bottom:1.5px dashed var(--ink);padding-bottom:6px;margin:0 0 6px}
+.cl-rc-who{font:400 1.15rem/1 var(--display);text-transform:uppercase;margin:4px 0 10px}
+.cl-rc-l{display:flex;justify-content:space-between;gap:6px;margin:0;padding:3px 0}
+.cl-ing{background:var(--riso);margin:0 -5px;padding:3px 5px}
+.cl-tot{border-top:1.5px dashed var(--ink);margin-top:6px;padding-top:8px;font-weight:700;font-size:.9rem}
+.cl-kpis{display:grid;gap:10px;margin:0 0 6px}
+.cl-kpis div{display:flex;align-items:baseline;gap:14px;border-top:2px solid var(--ink);padding-top:10px}
+.cl-kpis b{font:400 2.4rem/1 var(--display);min-width:92px;color:var(--ink);text-shadow:2px 2px 0 var(--riso)}
+.cl-kpis span{font:500 .95rem/1.35 var(--body)}
+.cl-stack{display:flex;flex-direction:column;gap:12px}
+.cl-row{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;align-items:center}
+.cl-row-l{font:600 .85rem var(--body)}
+.cl-bar{display:flex;height:22px;width:var(--w);border:1.5px solid var(--ink)}
+.cl-bar i:nth-child(1){background:var(--riso)}
+.cl-bar i:nth-child(2){background:var(--ink)}
+.cl-bar i:nth-child(3){background:#2F4BFF}
+.cl-bar i:nth-child(4){background:#E2AE00}
+.cl-row > b{grid-column:2;font:600 .74rem var(--mono);color:var(--muted)}
+.cl-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font:400 .74rem var(--mono);color:var(--muted);margin:14px 0 0}
+.cl-legend span{display:inline-flex;align-items:center;gap:6px}
+.cl-legend i{width:11px;height:11px;border:1.5px solid var(--ink);display:inline-block}
+.cl-legend .k0{background:var(--riso)} .cl-legend .k1{background:var(--ink)} .cl-legend .k2{background:#2F4BFF} .cl-legend .k3{background:#E2AE00}
+.cl-product{display:grid;grid-template-columns:1fr 240px;gap:22px;align-items:start;margin:10px 0 0}
+.cl-prod-name{font:400 1.7rem/1 var(--display);text-transform:uppercase;margin:0 0 14px}
+.cl-prod-name small{display:block;font:600 .68rem var(--mono);letter-spacing:.08em;color:var(--muted);margin-top:6px}
+.cl-steps ol{list-style:none;margin:0;padding:0;counter-reset:st;display:flex;flex-direction:column;gap:12px}
+.cl-steps li{counter-increment:st;display:grid;grid-template-columns:34px 1fr;gap:2px 10px}
+.cl-steps li::before{content:counter(st);grid-row:span 2;width:30px;height:30px;border-radius:50%;background:var(--riso);border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font:400 1rem var(--display)}
+.cl-steps li b{font:700 .98rem var(--body)}
+.cl-steps li span{font:400 .86rem/1.4 var(--body);color:var(--muted)}
+.phone{background:var(--ink);color:var(--paper);border-radius:26px;padding:18px 16px 20px;box-shadow:6px 6px 0 var(--riso);font-family:var(--body)}
+.ph-top{display:flex;justify-content:space-between;font:600 .68rem var(--mono);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #3a3735;padding-bottom:10px}
+.ph-top span:first-child{color:var(--riso)}
+.ph-sector{font:400 1.3rem/1 var(--display);text-transform:uppercase;margin:14px 0 10px}
+.ph-full{display:flex;justify-content:space-between;font:400 .8rem var(--mono);color:#a9a49d;margin:0}
+.ph-price{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 8px}
+.ph-price span{font:600 .85rem var(--body)}
+.ph-price b{font:400 2.2rem/1 var(--display);color:var(--riso)}
+.ph-why{font:400 .74rem/1.4 var(--mono);color:#d8d3cc;background:#25221f;padding:8px;margin:0 0 12px}
+.ph-quota{display:flex;justify-content:space-between;font:600 .68rem var(--mono);margin:0 0 6px;color:#d8d3cc}
+.ph-bar{height:6px;background:#3a3735;margin-bottom:16px}
+.ph-bar i{display:block;height:100%;background:var(--riso)}
+.ph-btn{display:block;text-align:center;background:var(--riso);color:var(--ink);font:400 1.1rem/1 var(--display);text-transform:uppercase;padding:12px;border-radius:12px}
+.cl-personas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cl-persona{background:var(--sheet);border:1.5px solid var(--rule);padding:12px;display:flex;flex-direction:column;gap:4px}
+.cl-persona b{font:700 .98rem var(--body)}
+.cl-persona span{font:400 .8rem/1.4 var(--mono);color:var(--muted)}
+.cl-persona em{font:600 .78rem var(--mono);font-style:normal;margin-top:4px}
+.cl-persona.ok{border-color:var(--ink);box-shadow:3px 3px 0 var(--riso)}
+.cl-persona.ok em{background:var(--riso);width:fit-content;padding:1px 5px}
+.cl-risks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.cl-risks li{border-left:3px solid var(--riso);padding:2px 0 2px 12px;font:400 .95rem/1.45 var(--body)}
+.cl-end{font:700 1.05rem/1.4 var(--body);margin:20px 0 4px;max-width:50ch}
+form.readonly .opt, form.readonly .ctl input, form.readonly select, form.readonly textarea{pointer-events:none}
+form.readonly .ctl{opacity:.85}
+.ro-banner{display:none;font:600 .74rem var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:var(--paper);padding:7px 10px;margin:0 0 14px}
+form.readonly .ro-banner{display:block}
+@media (max-width:560px){
+  .cl-product{grid-template-columns:1fr}
+  .phone{max-width:280px}
+  .cl-receipts{grid-template-columns:1fr}
+  .cl-facts{grid-template-columns:1fr}
+  .cl-facts div{border-right:0;border-bottom:1.5px solid var(--ink);flex-direction:row;align-items:center;gap:12px}
+  .cl-facts div:last-child{border-bottom:0}
+  .cl-facts b{min-width:34px}
+  .cl-personas{grid-template-columns:1fr}
+  .cl-row{grid-template-columns:96px 1fr}
+}
+
+@media (max-width:460px){
+  .facts{grid-template-columns:1fr}
+  .facts div{border-right:0;border-bottom:1.5px solid var(--ink);flex-direction:row;align-items:baseline;gap:10px}
+  .facts div:last-child{border-bottom:0}
+  .q{padding:16px 14px 18px}
+  .hint{margin-left:0}
+  .opts.grid{grid-template-columns:1fr 1fr}
+  .opts.cards{grid-template-columns:1fr}
+  .cards .opt span{min-height:70px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress" hidden aria-hidden="true">
+  <div class="wrap"><div class="bar"><span id="barFill"></span></div><span class="pct" id="pct">Etapa 1</span></div>
+</div>
+
+<div id="closed" hidden>
+  <header class="mast">
+    <div class="wrap">
+      <div class="mast-top"><span>Trabalho de estrutura de dados</span><span>Nov 2026</span></div>
+      <h1>Quanto custa ver um show?</h1>
+      <p class="kicker">Uma pesquisa com fãs da Hayley Williams sobre o que pesa na hora de ir a um show</p>
+    </div>
+    <svg class="burst" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 58,22 78,10 74,32 96,32 80,48 98,62 76,66 84,88 62,80 50,98 40,80 18,90 24,68 2,62 20,48 4,32 26,30 22,8 42,22" /><text x="50" y="50" text-anchor="middle">FIM</text><text x="50" y="62" text-anchor="middle" class="sm">DA COLETA</text></svg>
+    <div class="band"><span>Coleta encerrada</span><span>140 respostas</span></div>
+  </header>
+
+  <div class="wrap cl">
+    <p class="cl-lede">A coleta terminou. Aqui dá pra ver como a pesquisa foi feita, o que as respostas mostraram e o que poderia nascer delas.</p>
+    <p class="cl-flag">Prévia: os números desta página são fictícios, só pra mostrar como ela vai ficar com os resultados reais.</p>
+
+    <nav class="chap-nav" aria-label="Capítulos">
+      <button type="button" data-jump="cap-pesquisa"><b>01</b><span>Como foi a pesquisa</span></button>
+      <button type="button" data-jump="cap-resultados"><b>02</b><span>O que os dados mostraram</span></button>
+      <button type="button" data-jump="cap-produto"><b>03</b><span>E se virasse um produto?</span></button>
+    </nav>
+
+    <section class="cl-sec" id="cap-pesquisa">
+      <p class="cl-num">01</p>
+      <h2 class="cl-h">Como foi a pesquisa</h2>
+      <p class="cl-p">Um formulário próprio, divulgado em grupos de fãs dos shows do Rio e de São Paulo e por um fã-clube no X. Cada resposta virou uma linha numa planilha com duas tabelas, pessoas e ingressos, ligadas por um código, porque uma mesma pessoa pode ter ido a mais de um show.</p>
+      <div class="cl-facts">
+        <div><b>2</b><span>caminhos: quem foi e quem não foi</span></div>
+        <div><b>8</b><span>etapas pra quem foi, 3 pra quem não foi</span></div>
+        <div><b>0</b><span>nomes ou contatos coletados</span></div>
+      </div>
+      <button type="button" class="btn btn-go cl-btn" id="viewFormBtn">Ver o questionário</button>
+      <p class="cl-small">Dá pra passar por todas as telas, só pra olhar. Nada pode ser marcado.</p>
+    </section>
+
+    <section class="cl-sec" id="cap-resultados">
+      <p class="cl-num">02</p>
+      <h2 class="cl-h">O ingresso era a parte barata</h2>
+      <p class="cl-p">O ingresso custou parecido pra todo mundo. O que mudou de verdade foi o resto da viagem.</p>
+      <div class="cl-receipts">
+        <div class="cl-rc cl-rc-a">
+          <p class="cl-rc-top"><span>Recibo médio</span><span>nº 001</span></p>
+          <p class="cl-rc-who">Mora na cidade do show</p>
+          <p class="cl-rc-l cl-ing"><span>Ingresso</span><b>R$ 720</b></p>
+          <p class="cl-rc-l"><span>Transporte</span><b>R$ 70</b></p>
+          <p class="cl-rc-l"><span>Hospedagem</span><b>R$ 0</b></p>
+          <p class="cl-rc-l"><span>Alimentação e extras</span><b>R$ 315</b></p>
+          <p class="cl-rc-l cl-tot"><span>Total</span><b>R$ 1.105</b></p>
+        </div>
+        <div class="cl-rc cl-rc-b">
+          <p class="cl-rc-top"><span>Recibo médio</span><span>nº 002</span></p>
+          <p class="cl-rc-who">Veio do Norte</p>
+          <p class="cl-rc-l cl-ing"><span>Ingresso</span><b>R$ 735</b></p>
+          <p class="cl-rc-l"><span>Transporte</span><b>R$ 2.050</b></p>
+          <p class="cl-rc-l"><span>Hospedagem</span><b>R$ 510</b></p>
+          <p class="cl-rc-l"><span>Alimentação e extras</span><b>R$ 605</b></p>
+          <p class="cl-rc-l cl-tot"><span>Total</span><b>R$ 3.900</b></p>
+        </div>
+      </div>
+      <div class="cl-kpis">
+        <div><b>3,5x</b><span>mais caro pra quem veio do Norte</span></div>
+        <div><b>1,1</b><span>mês de renda gasto, em média, por quem veio de longe</span></div>
+        <div><b>68%</b><span>de quem viajou iria a um show mais perto de casa</span></div>
+      </div>
+      <h3 class="cl-h3">Pra onde foi o dinheiro</h3>
+      <div class="cl-stack" role="img" aria-label="Divisão do gasto médio por região: quanto mais longe, menor a parte do ingresso">
+        <div class="cl-row"><span class="cl-row-l">Mora na cidade</span><div class="cl-bar" style="--w:28%"><i style="flex:65"></i><i style="flex:6"></i><i style="flex:0"></i><i style="flex:29"></i></div><b>65% ingresso</b></div>
+        <div class="cl-row"><span class="cl-row-l">Sudeste</span><div class="cl-bar" style="--w:42%"><i style="flex:48"></i><i style="flex:20"></i><i style="flex:10"></i><i style="flex:22"></i></div><b>48% ingresso</b></div>
+        <div class="cl-row"><span class="cl-row-l">Nordeste</span><div class="cl-bar" style="--w:80%"><i style="flex:22"></i><i style="flex:46"></i><i style="flex:14"></i><i style="flex:18"></i></div><b>22% ingresso</b></div>
+        <div class="cl-row"><span class="cl-row-l">Norte</span><div class="cl-bar" style="--w:100%"><i style="flex:19"></i><i style="flex:53"></i><i style="flex:13"></i><i style="flex:15"></i></div><b>19% ingresso</b></div>
+      </div>
+      <p class="cl-legend"><span><i class="k0"></i>Ingresso</span><span><i class="k1"></i>Transporte</span><span><i class="k2"></i>Hospedagem</span><span><i class="k3"></i>Alimentação e extras</span></p>
+      <a class="btn btn-back cl-btn cl-link" href="https://claude.ai/artifact/QYn7GFpkiRNZpteBEsXEr2">Ver o relatório completo</a>
+    </section>
+
+    <section class="cl-sec" id="cap-produto">
+      <p class="cl-num">03</p>
+      <h2 class="cl-h">E se virasse um produto?</h2>
+      <p class="cl-tag">Estudo hipotético · só faz sentido se os dados confirmarem</p>
+      <p class="cl-p">Se a pesquisa mostrar que a distância e a renda decidem quem consegue ir, uma saída seria um ingresso com preço ajustado. Mas não só pela região: quem mora longe e ganha bem não precisa do mesmo apoio de quem mora longe e ganha pouco.</p>
+
+      <div class="cl-product">
+        <div class="cl-steps">
+          <p class="cl-prod-name">Ingresso Justo <small>nome provisório</small></p>
+          <ol>
+            <li><b>Escolha o show</b><span>Do mesmo jeito que em qualquer site de ingressos.</span></li>
+            <li><b>Confirme região e renda</b><span>Pelo gov.br, sem enviar comprovante nem holerite.</span></li>
+            <li><b>Pague o valor ajustado</b><span>Dentro de uma cota reservada pra cada show.</span></li>
+          </ol>
+        </div>
+        <div class="phone" aria-label="Exemplo de tela de compra">
+          <div class="ph-top"><span>Ingresso Justo</span><span>SP · 12/11</span></div>
+          <p class="ph-sector">Pista · Inteira</p>
+          <p class="ph-full"><span>Preço cheio</span><s>R$ 565</s></p>
+          <div class="ph-price"><span>Seu preço</span><b>R$ 340</b></div>
+          <p class="ph-why">Você mora a 3.100 km do show e tem renda de até R$ 3.000</p>
+          <p class="ph-quota"><span>Cota regional</span><span>120 de 500 restantes</span></p>
+          <div class="ph-bar"><i style="width:76%"></i></div>
+          <span class="ph-btn">Comprar</span>
+        </div>
+      </div>
+
+      <h3 class="cl-h3">Pra quem é</h3>
+      <div class="cl-personas">
+        <div class="cl-persona ok"><b>Ana, 24 anos</b><span>Mora em Porto Velho, renda de R$ 2.200</span><em>Tem direito ao preço ajustado</em></div>
+        <div class="cl-persona"><b>Bruno, 31 anos</b><span>Mora em Porto Velho, renda de R$ 9.000</span><em>Paga o preço cheio</em></div>
+      </div>
+
+      <h3 class="cl-h3">O que precisaria ser resolvido</h3>
+      <ul class="cl-risks">
+        <li><b>Quem paga a diferença?</b> Uma cota bancada por patrocínio, pela produtora ou por um programa público.</li>
+        <li><b>Endereço emprestado.</b> Validação pelo gov.br e limite de ingressos por CPF.</li>
+        <li><b>Quem não tem holerite.</b> Aceitar CadÚnico ou declaração de imposto de renda.</li>
+        <li><b>Privacidade.</b> Confirmar os dados sem guardar documento nenhum, como pede a LGPD.</li>
+      </ul>
+
+      <h3 class="cl-h3">Como saber se funcionou</h3>
+      <div class="cl-facts">
+        <div><b>↑</b><span>mais público de fora do Sudeste</span></div>
+        <div><b>↓</b><span>gasto total médio de quem vem de longe</span></div>
+        <div><b>⏱</b><span>tempo pra cota regional esgotar</span></div>
+      </div>
+      <p class="cl-end">O próximo passo é o mais importante: conferir se os dados reais sustentam essa ideia.</p>
+      <button type="button" class="btn btn-back cl-btn" data-jump="closed">Voltar ao início</button>
+    </section>
+  </div>
+</div>
+
+<form id="form" novalidate autocomplete="off">
+
+  <div id="start">
+    <header class="mast">
+      <div class="wrap">
+        <div class="mast-top"><span>Trabalho de estrutura de dados</span><span>Nov 2026</span></div>
+        <h1>Quanto custa ver um show?</h1>
+        <p class="kicker">Uma pesquisa com fãs da Hayley Williams sobre o que pesa na hora de ir a um show</p>
+      </div>
+      <svg class="burst" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 58,22 78,10 74,32 96,32 80,48 98,62 76,66 84,88 62,80 50,98 40,80 18,90 24,68 2,62 20,48 4,32 26,30 22,8 42,22" /><text x="50" y="47" text-anchor="middle">4 MIN</text><text x="50" y="62" text-anchor="middle" class="sm">PRA RESPONDER</text></svg>
+      <div class="band"><span>Rio 10/11</span><span>São Paulo 12 e 13/11</span></div>
+    </header>
+    <div class="wrap intro">
+      <div class="facts" role="list">
+        <div role="listitem"><b>Anônima</b><span>sem nome nem contato</span></div>
+        <div role="listitem"><b>Sem fins comerciais</b><span>resultados só agrupados</span></div>
+      </div>
+    </div>
+    <div class="wrap start-q">
+      <div id="startQ"></div>
+      <p class="consent">Ao começar, você concorda em participar de forma anônima. As respostas serão usadas só neste trabalho e mostradas de forma agrupada.</p>
+      <button type="button" class="btn btn-go start-go" id="startBtn" style="width:100%">Começar</button>
+    </div>
+  </div>
+
+  <main class="wrap" id="screens"></main>
+
+  <section class="wrap thanks" id="thanks" hidden>
+    <p class="stage-kick">Respostas enviadas</p>
+    <figure class="gif-slot" id="gifSlot"><video id="gifVid" src="hayley.mp4" muted loop playsinline preload="auto" aria-label="Hayley Williams piscando e sorrindo"></video></figure>
+    <h2>Muito obrigada!</h2>
+    <p>Sua resposta ajuda a entender o que pesa na hora de ir a um show.</p>
+    <p>Quando a análise ficar pronta, os resultados vão aparecer neste mesmo link.</p>
+    <div id="previewBox" hidden>
+      <div class="note">Modo prévia: nada foi enviado. Quando a planilha estiver conectada, cada resposta vira uma linha.</div>
+      <details><summary>Ver como a resposta chegaria na planilha</summary><pre id="payloadOut"></pre></details>
+      <p style="margin-top:16px"><button class="mini" type="button" id="againBtn">Voltar ao formulário</button></p>
+    </div>
+  </section>
+
+  <nav class="nav" id="nav" hidden>
+    <div class="wrap">
+      <p class="nav-err" id="navErr" role="alert" hidden></p>
+      <button type="button" class="btn btn-back" id="backBtn">Voltar</button>
+      <button type="button" class="btn btn-go" id="nextBtn">Continuar</button>
+    </div>
+  </nav>
+</form>
+
+<footer class="about" id="about">
+  <div class="wrap"><b>Sobre a pesquisa</b><br>Pesquisa sem fins comerciais. Nenhum nome, e-mail ou telefone é coletado. Os resultados serão apresentados só de forma agrupada.</div>
+</footer>
+
+<script>
+/* Cole aqui a URL do app da web do Google Apps Script. Vazio = modo prévia. */
+const CONFIG = { ENDPOINT: 'https://script.google.com/macros/s/AKfycbznGeS2Kx6claNpoawKqGIP8lVLPKGX0gNHE8p0mWZjSkgvWFwlypM4UhSDwWS45bgF/exec', FASE: 'coleta' }; /* FASE: 'coleta' ou 'encerrada' */
+let READONLY = false;
+
+const ESTADOS = ['Acre','Alagoas','Amapá','Amazonas','Bahia','Ceará','Distrito Federal','Espírito Santo','Goiás','Maranhão','Mato Grosso','Mato Grosso do Sul','Minas Gerais','Pará','Paraíba','Paraná','Pernambuco','Piauí','Rio de Janeiro','Rio Grande do Norte','Rio Grande do Sul','Rondônia','Roraima','Santa Catarina','São Paulo','Sergipe','Tocantins'];
+
+const SHOWS = {
+  rio:  { city:'Rio de Janeiro', short:'Rio', date:'10/11', venue:'Qualistage',    sectors:['Pista','Pista Premium','Poltronas','Camarote','Outro'] },
+  sp12: { city:'São Paulo',      short:'SP',  date:'12/11', venue:'Espaço Unimed', sectors:['Pista','Pista Premium','Mezanino','Camarote','Outro'] },
+  sp13: { city:'São Paulo',      short:'SP',  date:'13/11', venue:'Espaço Unimed', sectors:['Pista','Pista Premium','Mezanino','Camarote','Outro'] }
+};
+
+const LOCAL = 'Moro na cidade do evento';
+const NO_FLAGS = ['Não tive esse gasto'];
+const LONG_STAY = ['2 noites','3 noites','4 noites ou mais'];
+
+const PART_Q = { id:'participou', type:'radio', cards:true, label:'Você foi a algum show da Hayley no Brasil?',
+  opts:[{v:'fui',t:'Eu fui',s:'Rio ou São Paulo'},{v:'nf',t:'Não fui',s:'Dessa vez não deu'}] };
+const SHOWS_Q = { id:'shows', type:'check', cards:true, label:'Em quais shows você foi?', hint:'Pode marcar mais de um. Pra cada show, você vai preencher um ingresso.',
+  opts:[{v:'rio',t:'Rio de Janeiro',s:'10/11 · Qualistage'},{v:'sp12',t:'São Paulo',s:'12/11 · Espaço Unimed'},{v:'sp13',t:'São Paulo',s:'13/11 · Espaço Unimed'}],
+  when:g=>g('participou')==='fui' };
+const naoFui = g => g('participou') === 'nf';
+
+const SCREENS = [
+  { id:'sobre', title:'Sobre você', qs:[
+    { id:'idade', type:'radio', label:'Qual é a sua faixa etária?', opts:['Menos de 18 anos','18 a 24 anos','25 a 29 anos','30 a 34 anos','35 a 44 anos','45 a 54 anos','55 anos ou mais'] },
+    { id:'estado', type:'select', label:'Em qual estado você mora?', opts:ESTADOS },
+    { id:'cidade', type:'text', label:'Em qual cidade você mora?', placeholder:'Ex.: Ribeirão Preto' },
+    { id:'relacao', type:'radio', label:'Qual é a sua relação com a cidade onde aconteceu o show?', opts:[LOCAL,'Moro em outra cidade da região metropolitana','Moro em outra cidade do mesmo estado','Moro em outro estado'],
+      when:g=>!naoFui(g) }
+  ]},
+  { id:'tickets' },
+  { id:'naofui', title:'O que pesou na decisão', lead:'Essas perguntas são pra quem não foi dessa vez.', qs:[
+    { id:'nf_show', type:'radio', label:'Qual show você queria ver?', opts:['Rio de Janeiro · 10/11','São Paulo · 12/11','São Paulo · 13/11','Qualquer um deles'] },
+    { id:'nf_motivos', type:'check', max:3, label:'O que impediu você de ir?', hint:'Escolha até 3 opções.', opts:['Preço do ingresso','Custo da viagem (transporte e hospedagem)','Ingressos esgotados','Preço alto na revenda','Distância ou tempo de viagem','Não consegui folga no trabalho ou nos estudos','Não tinha com quem ir','Outro'] },
+    { id:'nf_teto', type:'radio', label:'Pensando também nos gastos de viagem, até quanto você pagaria no ingresso pra conseguir ir?', opts:['Até R$ 200','De R$ 201 a R$ 350','De R$ 351 a R$ 500','De R$ 501 a R$ 700','Mais de R$ 700'] },
+    { id:'nf_perto', type:'radio', label:'Se o show tivesse acontecido na sua cidade ou mais perto, você teria ido?', opts:['Sim, com certeza','Talvez','Não'] },
+    { id:'nf_renda', type:'radio', optional:true, label:'Qual é a faixa da sua renda mensal?', hint:'Se é a sua família que banca esse tipo de gasto, considere a renda dela. Serve só pra comparar o peso dos custos no orçamento.', opts:['Até R$ 1.500','De R$ 1.501 a R$ 3.000','De R$ 3.001 a R$ 5.000','De R$ 5.001 a R$ 8.000','De R$ 8.001 a R$ 12.000','Acima de R$ 12.000','Prefiro não responder'] }
+  ]},
+  { id:'viagem', title:'A viagem', lead:'Nos valores, uma estimativa aproximada já ajuda bastante.', note:'Você mora na cidade do show, então aqui só entra o transporte dentro da cidade.', qs:[
+    { id:'transp_meio', type:'radio', label:'Como você chegou à cidade do show?', opts:['Ônibus','Avião','Carro (próprio ou carona)','Excursão ou van','Mais de um meio de transporte','Outro'],
+      detailOn:['Mais de um meio de transporte'], detailPh:'Ex.: avião e depois ônibus',
+      when:g=>g('relacao')!==LOCAL },
+    { id:'transp_valor', type:'money', label:'Quanto você gastou com transporte, no total?', hint:'Some a ida e a volta e os deslocamentos na cidade do show (aplicativo, metrô, ônibus).', flags:NO_FLAGS },
+    { id:'hosp_noites', type:'radio', label:'Quantas noites você ficou na cidade do show?', opts:['Nenhuma, voltei no mesmo dia','1 noite','2 noites','3 noites','4 noites ou mais'],
+      when:g=>g('relacao')!==LOCAL },
+    { id:'hosp_valor', sub:true, type:'money', label:'Quanto você gastou com hospedagem, considerando só a sua parte?', flags:['Não paguei (fiquei com amigos, família ou ganhei a estadia)'],
+      when:g=>g('relacao')!==LOCAL && g('hosp_noites')!=='' && g('hosp_noites')!=='Nenhuma, voltei no mesmo dia' }
+  ]},
+  { id:'gastos', title:'Outros gastos', qs:[
+    { id:'alimentacao', type:'money', label:'Quanto você gastou com alimentação durante a viagem?', hint:'Inclua o que consumiu dentro da casa de show. Considere o total, não só um dia.', flags:NO_FLAGS },
+    { id:'extras', type:'money', label:'E com produtos do show?', hint:'Camisetas, copos, bandeiras, ecobags e outros itens, oficiais ou de ambulante.', flags:NO_FLAGS },
+    { id:'passeios', type:'money', label:'E com passeios e compras pela cidade, fora do show?', hint:'Restaurantes, pontos turísticos, compras... Uma média já ajuda.', flags:['Não tive esse gasto','Não sei dizer'],
+      when:g=>g('relacao')!==LOCAL && LONG_STAY.includes(g('hosp_noites')) }
+  ]},
+  { id:'orcamento', title:'Como você fez caber no orçamento', qs:[
+    { id:'custeio', type:'radio', label:'Quem pagou a maior parte das despesas?', opts:['Eu mesma(o)','Pais ou familiares','Parceiro(a)','Dividi os gastos com outra pessoa','Outro'] },
+    { id:'organizacao', type:'check', label:'Como você se organizou financeiramente para ir?', hint:'Pode marcar mais de uma opção.', opts:['Juntei dinheiro especificamente para o show','Usei uma reserva que já tinha','Usei parte da minha reserva de emergência','Parcelei despesas no cartão','Recebi ajuda financeira de alguém','Adiei ou reorganizei outras despesas','Usei o dinheiro do mês, sem planejamento']},
+    { id:'renda', type:'radio', optional:true, label:'Qual é a faixa de renda mensal de quem pagou a maior parte?', hint:'Se foi você, a sua renda. Se foi a família, a renda da família. Serve só pra comparar o peso dos gastos no orçamento.', opts:['Até R$ 1.500','De R$ 1.501 a R$ 3.000','De R$ 3.001 a R$ 5.000','De R$ 5.001 a R$ 8.000','De R$ 8.001 a R$ 12.000','Acima de R$ 12.000','Prefiro não responder'] }
+  ]},
+  { id:'opiniao', title:'Sua opinião', qs:[
+    { id:'mais_perto', type:'radio', label:'Se o mesmo show tivesse acontecido numa cidade mais perto de você, você teria ido nele em vez de viajar?', opts:['Sim, com certeza','Talvez','Não, viajaria mesmo assim'],
+      when:g=>!naoFui(g) && g('relacao')!==LOCAL },
+    { id:'regionalizar', type:'radio', label:'O que você acha de o preço do ingresso variar de acordo com a região de onde a pessoa vem?', opts:['Muito injusto','Um pouco injusto','Não tenho opinião formada','Um pouco justo','Muito justo'] },
+    { id:'regionalizar_renda', type:'radio', label:'E se o preço variasse de acordo com a região e também com a renda de quem compra?', opts:['Muito injusto','Um pouco injusto','Não tenho opinião formada','Um pouco justo','Muito justo'] },
+    { id:'mais_justo', type:'check', max:2, exclusive:['Não sei opinar'], label:'O que mais ajudaria a tornar grandes shows acessíveis pra quem mora longe ou tem menos renda?', hint:'Escolha até 2 opções.', detailPh:'Qual seria a sua alternativa?',
+      opts:['Manter o mesmo preço para todos, como é hoje','Desconto no ingresso para quem mora longe da cidade do show','Levar a turnê para mais cidades e regiões do país','Preço de acordo com a renda de quem compra','Mais setores com ingressos mais baratos','Parcerias com descontos em passagem e hospedagem','Mais controle sobre cambismo e revenda abusiva','Outra alternativa','Não sei opinar'] },
+    { id:'relato', type:'textarea', optional:true, label:'Quer contar alguma experiência ou dificuldade com o custo de ir a shows?', placeholder:'Escreva à vontade.' }
+  ]},
+  { id:'fila', title:'Curiosidades da fila', lead:'Essa parte é opcional, só pela curiosidade.', qs:[
+    { id:'freebie', type:'radio', optional:true, label:'Você levou freebies pra distribuir ou trocar na fila?', hint:'Adesivos, pulseiras, marcadores de página, cartões, chaveiros...', opts:['Sim','Não'] },
+    { id:'freebie_tipo', sub:true, type:'check', optional:true, label:'O que você levou?', hint:'Pode marcar mais de uma opção.', opts:['Adesivos','Pulseiras','Marcadores de página','Cartões ou fotos','Chaveiros ou bottons','Outro'],
+      when:g=>g('freebie')==='Sim' },
+    { id:'freebie_custo', sub:true, type:'money', optional:true, label:'Quanto você gastou, mais ou menos, pra produzir seus freebies?', hint:'Considere material, impressão e frete.', flags:['Não tive custo (ganhei ou reaproveitei material)'],
+      when:g=>g('freebie')==='Sim' }
+  ]}
+];
+
+const TICKET_QS = [
+  { id:'setor', type:'radio', label:'Em qual setor você ficou?' },
+  { id:'tipo', type:'radio', label:'Qual foi o tipo de ingresso?', opts:['Inteira','Meia-entrada','Presente ou cortesia','Outro'] },
+  { id:'onde', type:'radio', label:'Onde você comprou o ingresso?', opts:['Site oficial ou bilheteria','Plataforma de revenda','Direto de outra pessoa','Ganhei de presente'] },
+  { id:'valor', type:'money', label:'Quanto você pagou pelo ingresso, já com as taxas?', flags:['Não paguei (presente ou cortesia)'] },
+  { id:'pagamento', type:'radio', label:'Como você pagou?', opts:['Pix ou débito','Cartão de crédito à vista','Cartão de crédito parcelado','Outra pessoa pagou'] },
+  { id:'parcelas', sub:true, type:'radio', optional:true, label:'Em quantas vezes?', opts:['2 a 3 vezes','4 a 6 vezes','7 a 10 vezes','11 vezes ou mais'] }
+];
+
+/* ---------- renderização ---------- */
+const REG = [];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const slug = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+const txt = o => typeof o === 'string' ? o : o.t;
+
+function optHTML(name, type, o){
+  const v = typeof o === 'string' ? o : o.v;
+  const id = name + '__' + slug(v);
+  const inner = (typeof o === 'object' && o.s) ? `<b>${esc(o.t)}</b><small>${esc(o.s)}</small>` : esc(txt(o));
+  return `<label class="opt${type === 'checkbox' ? ' box' : ''}" for="${id}"><input type="${type}" id="${id}" name="${name}" value="${esc(v)}"><span>${inner}</span></label>`;
+}
+function optsHTML(name, type, opts, cards){
+  if (cards) return `<div class="opts cards">${opts.map(o => optHTML(name, type, o)).join('')}</div>`;
+  const short = opts.every(o => txt(o).length <= 16);
+  return `<div class="opts ${short ? 'grid' : 'list'}">${opts.map(o => optHTML(name, type, o)).join('')}</div>`;
+}
+const DETAIL_TRIGGERS = /^(Outro|Outra alternativa)$/;
+function detailOf(q){
+  if (!q.opts || !(q.type === 'radio' || q.type === 'check')) return null;
+  const on = q.opts.map(o => typeof o === 'string' ? o : o.v).filter(v => DETAIL_TRIGGERS.test(v) || (q.detailOn || []).includes(v));
+  return on.length ? { on, ph: q.detailPh || 'Conte qual' } : null;
+}
+function qHTML(q, name, chip){
+  q.detail = detailOf(q);
+  let body = '';
+  if (q.type === 'radio') body = optsHTML(name, 'radio', q.opts, q.cards);
+  if (q.type === 'check') body = optsHTML(name, 'checkbox', q.opts, q.cards);
+  if (q.type === 'select') body = `<select id="${name}" name="${name}" aria-labelledby="lbl-${name}"><option value="">Escolha o estado</option>${q.opts.map(o => `<option>${esc(o)}</option>`).join('')}</select>`;
+  if (q.type === 'text') body = `<input type="text" id="${name}" name="${name}" placeholder="${esc(q.placeholder||'')}" aria-labelledby="lbl-${name}">`;
+  if (q.type === 'textarea') body = `<textarea id="${name}" name="${name}" placeholder="${esc(q.placeholder||'')}" aria-labelledby="lbl-${name}"></textarea>`;
+  if (q.type === 'money') body = `<p class="money-tip">Centavos são opcionais. Confira o valor escrito por extenso logo abaixo.</p><div class="money"><span class="cur">R$</span><input type="text" inputmode="decimal" id="${name}" name="${name}" data-money placeholder="Ex.: 650 ou 650,50" aria-labelledby="lbl-${name}"></div>`
+    + `<p class="echo" data-echo="${name}" hidden></p><div class="flags">${(q.flags || []).map(f => optHTML(name + '_flag', 'checkbox', f)).join('')}</div>`;
+  if (q.detail) body += `<div class="detail" data-detail="${name}" hidden><label class="detail-lbl" for="${name}__det">Descreva</label><input type="text" id="${name}__det" name="${name}__det" placeholder="${esc(q.detail.ph)}"></div>`;
+  const num = q.sub ? '<span class="qn sub" aria-hidden="true">+</span>' : '<span class="qn">·</span>';
+  return `<div class="q" role="group" aria-labelledby="lbl-${name}" data-q="${name}">
+    ${chip ? `<span class="q-chip">${esc(chip)}</span>` : ''}
+    <p class="q-lbl" id="lbl-${name}">${num}<span>${esc(q.label)}${q.optional ? '<span class="tag">opcional</span>' : ''}</span></p>
+    ${q.hint ? `<p class="hint">${esc(q.hint)}</p>` : ''}<div class="ctl">${body}</div>
+    <p class="miss">Faltou responder esta</p>${q.max ? `<p class="limit">Escolha no máximo ${q.max}</p>` : ''}</div>`;
+}
+
+REG.push({ name:'participou', def:PART_Q }, { name:'shows', def:SHOWS_Q, when:SHOWS_Q.when });
+document.getElementById('startQ').innerHTML = qHTML(PART_Q, 'participou') + qHTML(SHOWS_Q, 'shows');
+
+function ticketScreens(){
+  return Object.entries(SHOWS).map(([k, s]) => {
+    const qs = TICKET_QS.map(q => {
+      const def = Object.assign({}, q, q.id === 'setor' ? { opts:s.sectors } : {});
+      const name = k + '_' + q.id;
+      const when = q.id === 'parcelas'
+        ? g => g('shows').includes(k) && /parcelado/.test(g(k + '_pagamento'))
+        : g => g('shows').includes(k);
+      REG.push({ name, def, when, show:k });
+      return qHTML(def, name, (k === 'rio' ? 'RJ' : 'SP') + ' · ' + s.date);
+    }).join('');
+    return `<section class="screen" data-screen="ing-${k}" hidden>
+      <p class="sc-kick" data-kick></p>
+      <p class="ro-banner">Modo visualização · nada pode ser marcado</p>
+      <div class="tk-head"><span class="tk-n" data-tkn>Ingresso</span><p class="tk-city">${s.city}</p><p class="tk-meta">${s.date} · ${s.venue}</p></div>
+      <div class="t-copy" data-copywrap="${k}" hidden><span data-copytxt></span><button type="button" class="mini" data-copy="${k}">Copiar respostas</button></div>
+      ${qs}</section>`;
+  }).join('');
+}
+
+document.getElementById('screens').innerHTML = SCREENS.map(sc => {
+  if (sc.id === 'tickets') return ticketScreens();
+  const inner = sc.qs.map(q => { REG.push({ name:q.id, def:q, when:q.when }); return qHTML(q, q.id); }).join('');
+  return `<section class="screen" data-screen="${sc.id}" hidden>
+    <p class="sc-kick" data-kick></p>
+    <p class="ro-banner">Modo visualização · nada pode ser marcado</p>
+    <h2 class="sc-title">${esc(sc.title)}</h2>
+    ${sc.lead ? `<p class="sc-lead">${esc(sc.lead)}</p>` : ''}
+    ${sc.note ? `<p class="note" data-localnote hidden>${esc(sc.note)}</p>` : ''}
+    ${inner}</section>`;
+}).join('') + `<section class="screen" data-screen="revisao" hidden>
+    <p class="sc-kick" data-kick></p>
+    <h2 class="sc-title">Confira seu recibo</h2>
+    <div class="receipt" aria-live="polite">
+      <p class="rc-head"><span>Seu recibo do show</span><span id="rcStatus" class="rc-status"></span></p>
+      <ul class="rc-lines" id="rcLines"></ul>
+      <p class="rc-total"><span>Total</span><b id="rcTotal">R$ 0</b></p>
+    </div>
+    <p class="rc-msg">Se algum valor estiver errado, toque nele pra voltar à pergunta. Suas respostas vão pra planilha da pesquisa sem nenhum dado que identifique você.</p>
+  </section>`;
+
+/* ---------- leitura das respostas ---------- */
+const form = document.getElementById('form');
+const byName = n => [...form.querySelectorAll(`[name="${n}"]`)];
+const DEF = Object.fromEntries(REG.map(r => [r.name, r.def]));
+const qEl = n => form.querySelector(`[data-q="${n}"]`);
+
+function parseMoney(s){
+  s = String(s).replace(/\s|R\$/g,'');
+  if (!s) return null;
+  s = s.replace(/[^\d.,]/g, '');
+  if (!/\d/.test(s)) return null;
+  let int, dec = '';
+  if (s.includes(',')) {                       /* vírgula = centavos; pontos antes dela = milhar */
+    const i = s.lastIndexOf(',');
+    int = s.slice(0, i); dec = s.slice(i + 1);
+  } else if (s.includes('.')) {                /* só ponto: 3 dígitos depois = milhar (1.000); 1 ou 2 = centavos (650.50) */
+    const i = s.lastIndexOf('.'), after = s.slice(i + 1);
+    if (after.length === 3) int = s; else { int = s.slice(0, i); dec = after; }
+  } else int = s;
+  int = int.replace(/\D/g, '') || '0';
+  dec = dec.replace(/\D/g, '').slice(0, 2).padEnd(2, '0');
+  const n = Number(int) + Number(dec) / 100;
+  return isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : null;
+}
+function g(name){
+  const d = DEF[name];
+  if (!d) return '';
+  const els = byName(name);
+  if (d.type === 'check') return els.filter(e => e.checked).map(e => e.value);
+  if (d.type === 'radio') { const c = els.find(e => e.checked); return c ? c.value : ''; }
+  if (d.type === 'money') {
+    const f = byName(name + '_flag').find(e => e.checked);
+    if (f) return f.value;
+    const n = parseMoney(els[0].value);
+    return n === null ? '' : n;
+  }
+  return els[0] ? els[0].value.trim() : '';
+}
+const detailOn = name => { const d = DEF[name]; return !!(d && d.detail) && [].concat(g(name)).some(v => d.detail.on.includes(v)); };
+const detVal = name => { const el = byName(name + '__det')[0]; return el ? el.value.trim() : ''; };
+const answered = name => {
+  const v = g(name);
+  if (Array.isArray(v) ? v.length === 0 : v === '') return false;
+  return detailOn(name) ? detVal(name) !== '' : true;
+};
+const isVisible = r => READONLY || !r.when || r.when(g);
+const fmt = n => n.toLocaleString('pt-BR', { style:'currency', currency:'BRL', minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
+const selectedShows = () => READONLY ? ['rio'] : naoFui(g) ? [] : Object.keys(SHOWS).filter(k => g('shows').includes(k));
+
+/* valores: só números inteiros; a página confirma o valor por extenso pra evitar confusão com ponto e vírgula */
+function maskMoney(el){ el.value = el.value.replace(/[^\d.,]/g, '').slice(0, 12); }
+const UNI = ['','um','dois','três','quatro','cinco','seis','sete','oito','nove','dez','onze','doze','treze','quatorze','quinze','dezesseis','dezessete','dezoito','dezenove'];
+const DEZ = ['','','vinte','trinta','quarenta','cinquenta','sessenta','setenta','oitenta','noventa'];
+const CEN = ['','cento','duzentos','trezentos','quatrocentos','quinhentos','seiscentos','setecentos','oitocentos','novecentos'];
+function ate999(n){
+  if (n === 100) return 'cem';
+  const c = Math.floor(n / 100), r = n % 100, parts = [];
+  if (c) parts.push(CEN[c]);
+  if (r) parts.push(r < 20 ? UNI[r] : DEZ[Math.floor(r / 10)] + (r % 10 ? ' e ' + UNI[r % 10] : ''));
+  return parts.join(' e ');
+}
+function reaisPorExtenso(n){
+  if (n === 0) return '';
+  const mil = Math.floor(n / 1000), r = n % 1000;
+  let t = '';
+  if (mil) t = (mil === 1 ? 'mil' : ate999(mil) + ' mil');
+  if (r) t += (t ? ((r < 100 || r % 100 === 0) ? ' e ' : ' ') : '') + ate999(r);
+  return t + (n === 1 ? ' real' : ' reais');
+}
+function porExtenso(v){
+  const reais = Math.floor(v), cent = Math.round((v - reais) * 100);
+  const a = reaisPorExtenso(reais), b = cent ? ate999(cent) + (cent === 1 ? ' centavo' : ' centavos') : '';
+  if (!a && !b) return 'zero reais';
+  return a && b ? a + ' e ' + b : (a || b);
+}
+
+/* ---------- fluxo de telas ---------- */
+let cur = 'inicio';
+const flow = () => READONLY ? ['sobre', 'ing-rio', 'viagem', 'gastos', 'orcamento', 'opiniao', 'fila', 'naofui']
+  : naoFui(g) ? ['sobre', 'naofui', 'opiniao']
+  : ['sobre', ...selectedShows().map(k => 'ing-' + k), 'viagem', 'gastos', 'orcamento', 'opiniao', 'fila', 'revisao'];
+const inFlow = r => { const s = screenOfQ(r.name); return s === 'inicio' || flow().includes(s); };
+const isActive = r => isVisible(r) && inFlow(r);
+const screenEl = id => form.querySelector(`[data-screen="${id}"]`);
+const screenOfQ = name => { const el = qEl(name); const s = el && el.closest('[data-screen]'); return s ? s.dataset.screen : 'inicio'; };
+
+function go(id, focusQ){
+  document.getElementById('navErr').hidden = true;
+  form.querySelectorAll('.q.missing').forEach(el => el.classList.remove('missing'));
+  const start = id === 'inicio';
+  document.getElementById('closed').hidden = true;
+  document.getElementById('start').hidden = !start;
+  document.getElementById('thanks').hidden = true;
+  document.getElementById('progress').hidden = start;
+  document.getElementById('nav').hidden = start;
+  form.querySelectorAll('[data-screen]').forEach(s => s.hidden = s.dataset.screen !== id);
+  cur = id;
+  update();
+  if (focusQ) {
+    const el = qEl(focusQ);
+    if (el) { el.scrollIntoView({ block:'center' }); const f = el.querySelector('input:not([type=checkbox]):not([type=radio]),select,textarea') || el.querySelector('input'); if (f) f.focus({ preventScroll:true }); }
+  } else window.scrollTo(0, 0);
+}
+
+function missingIn(id){
+  const sc = id === 'inicio' ? document.getElementById('start') : screenEl(id);
+  return REG.filter(r => !r.def.optional && isActive(r) && sc.contains(qEl(r.name)) && !answered(r.name));
+}
+function flagMissing(list){
+  list.forEach(r => qEl(r.name).classList.add('missing'));
+  const first = qEl(list[0].name);
+  first.scrollIntoView({ behavior:'smooth', block:'center' });
+  if (cur !== 'inicio') {
+    const e = document.getElementById('navErr');
+    e.textContent = list.length === 1 ? 'Falta 1 resposta nesta tela.' : `Faltam ${list.length} respostas nesta tela.`;
+    e.hidden = false;
+  }
+}
+
+/* numeração contínua das perguntas visíveis; cada ingresso repete a mesma sequência */
+const TICKET_MAIN = TICKET_QS.filter(q => !q.sub).map(q => q.id);
+function renumber(){
+  let n = 0, base = null;
+  const order = selectedShows();
+  REG.forEach(r => {
+    if (r.def.sub || r.name === 'shows' || r.name === 'participou') return;
+    if (!isActive(r)) return;
+    const qn = qEl(r.name).querySelector('.qn');
+    if (r.show) {
+      if (r.show !== order[0]) { if (base !== null) qn.textContent = base + TICKET_MAIN.indexOf(r.def.id) + 1; return; }
+      if (base === null) base = n;
+      n = base + TICKET_MAIN.indexOf(r.def.id) + 1;
+      qn.textContent = n;
+    } else qn.textContent = ++n;
+  });
+}
+
+function update(){
+  REG.forEach(r => {
+    const el = qEl(r.name);
+    const vis = isVisible(r);
+    el.hidden = !vis;
+    const echo = el.querySelector('[data-echo]');
+    if (echo) { const raw = byName(r.name)[0].value; const n = parseMoney(raw); echo.hidden = n === null || !raw; if (n !== null) echo.textContent = fmt(n) + ' · ' + porExtenso(n); }
+    const det = el.querySelector('[data-detail]');
+    if (det) det.hidden = !detailOn(r.name);
+    if (vis && answered(r.name)) el.classList.remove('missing');
+  });
+  renumber();
+  const local = g('relacao') === LOCAL;
+  form.querySelectorAll('[data-localnote]').forEach(n => n.hidden = !local);
+
+  const steps = flow();
+  const i = steps.indexOf(cur);
+  if (i >= 0) {
+    document.getElementById('barFill').style.width = Math.round((i + 1) / steps.length * 100) + '%';
+    document.getElementById('pct').textContent = READONLY ? `Visualização · ${i + 1} de ${steps.length}` : `Etapa ${i + 1} de ${steps.length}`;
+    const kick = screenEl(cur).querySelector('[data-kick]');
+    if (kick) kick.textContent = `Etapa ${i + 1} de ${steps.length}`;
+    document.getElementById('backBtn').textContent = 'Voltar';
+    document.getElementById('nextBtn').textContent = cur === steps[steps.length - 1] ? (READONLY ? 'Voltar aos resultados' : 'Enviar respostas') : (READONLY ? 'Próxima tela' : 'Continuar');
+  }
+  const order = selectedShows();
+  order.forEach((k, j) => {
+    const sc = screenEl('ing-' + k);
+    sc.querySelector('[data-tkn]').textContent = order.length > 1 ? `Ingresso ${j + 1} de ${order.length}` : 'Seu ingresso';
+    const prev = order[j - 1];
+    const cw = sc.querySelector('[data-copywrap]');
+    const hasAny = kk => REG.some(r => r.show === kk && answered(r.name));
+    const show = !!prev && hasAny(prev) && !hasAny(k);
+    cw.hidden = !show;
+    if (show) { cw.querySelector('[data-copytxt]').textContent = `Foi parecido com o show de ${SHOWS[prev].short} ${SHOWS[prev].date}?`; cw.querySelector('[data-copy]').dataset.from = prev; }
+  });
+  renderReceipt(order);
+}
+
+function renderReceipt(order){
+  const items = order.map(k => ({ name: k + '_valor', label: `Ingresso · ${SHOWS[k].short} ${SHOWS[k].date}` }))
+    .concat([
+      { name:'transp_valor', label:'Transporte' },
+      { name:'hosp_valor', label:'Hospedagem' },
+      { name:'alimentacao', label:'Alimentação' },
+      { name:'extras', label:'Produtos do show' },
+      { name:'passeios', label:'Passeios e compras' },
+      { name:'freebie_custo', label:'Freebies' }
+    ]).filter(it => { const r = REG.find(x => x.name === it.name); return r && isVisible(r); });
+  let total = 0;
+  const ul = document.getElementById('rcLines');
+  ul.replaceChildren(...items.map(it => {
+    const v = g(it.name);
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'rc-line'; btn.dataset.goto = it.name;
+    const a = document.createElement('span'); a.textContent = it.label;
+    const b = document.createElement('b');
+    if (typeof v === 'number') { b.textContent = fmt(v); total += v; }
+    else if (v === 'Não sei dizer') { b.textContent = 'não sei dizer'; b.className = 'muted'; }
+    else if (v) { b.textContent = 'sem custo'; b.className = 'muted'; }
+    else { b.textContent = 'a preencher'; b.className = 'muted'; }
+    btn.append(a, b); li.appendChild(btn); return li;
+  }));
+  document.getElementById('rcTotal').textContent = fmt(total);
+  const faltam = REG.filter(r => !r.def.optional && isActive(r) && !answered(r.name)).length;
+  const st = document.getElementById('rcStatus');
+  st.textContent = faltam > 0 ? (faltam === 1 ? 'falta 1 resposta' : `faltam ${faltam} respostas`) : 'tudo certo';
+  st.classList.toggle('ok', faltam === 0);
+}
+
+function copyTicket(from, to){
+  TICKET_QS.forEach(q => {
+    const a = from + '_' + q.id, b = to + '_' + q.id;
+    if (q.type === 'money') {
+      byName(b)[0].value = byName(a)[0].value;
+      const f = byName(a + '_flag').find(e => e.checked);
+      byName(b + '_flag').forEach(e => e.checked = !!f && e.value === f.value);
+      byName(b)[0].disabled = !!f;
+    } else {
+      const v = g(a);
+      byName(b).forEach(e => e.checked = e.value === v);
+      const da = byName(a + '__det')[0], db = byName(b + '__det')[0];
+      if (da && db) db.value = da.value;
+    }
+  });
+}
+
+/* ---------- eventos ---------- */
+form.addEventListener('submit', e => e.preventDefault());
+form.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.tagName === 'INPUT') { e.preventDefault(); e.target.blur(); } });
+
+form.addEventListener('input', e => { if (e.target.matches('[data-money]')) maskMoney(e.target); update(); });
+
+form.addEventListener('change', e => {
+  const t = e.target;
+  if (!t.name) return;
+  if (t.name.endsWith('_flag')) {
+    const base = t.name.slice(0, -5);
+    if (t.checked) byName(t.name).forEach(o => { if (o !== t) o.checked = false; });
+    const any = byName(t.name).some(o => o.checked);
+    const inp = byName(base)[0];
+    inp.disabled = any;
+    if (any) inp.value = '';
+  }
+  const d = DEF[t.name];
+  if (d && d.type === 'check' && t.checked) {
+    const group = byName(t.name);
+    if (d.exclusive) {
+      if (d.exclusive.includes(t.value)) group.forEach(o => { if (o !== t) o.checked = false; });
+      else group.forEach(o => { if (d.exclusive.includes(o.value)) o.checked = false; });
+    }
+    if (d.max && group.filter(o => o.checked).length > d.max) {
+      t.checked = false;
+      const card = qEl(t.name);
+      card.classList.add('at-limit');
+      clearTimeout(card._lim); card._lim = setTimeout(() => card.classList.remove('at-limit'), 2200);
+    }
+  }
+  update();
+});
+
+form.addEventListener('click', e => {
+  const cp = e.target.closest('[data-copy]');
+  if (cp) { copyTicket(cp.dataset.from, cp.dataset.copy); update(); return; }
+  const gt = e.target.closest('[data-goto]');
+  if (gt) go(screenOfQ(gt.dataset.goto), gt.dataset.goto);
+});
+
+document.getElementById('startBtn').addEventListener('click', () => {
+  const miss = missingIn('inicio');
+  if (miss.length) { flagMissing(miss); return; }
+  go('sobre');
+});
+document.getElementById('backBtn').addEventListener('click', () => {
+  const steps = flow(); const i = steps.indexOf(cur);
+  if (READONLY && i <= 0) { exitReadonly(); return; }
+  go(i > 0 ? steps[i - 1] : 'inicio');
+});
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (READONLY) { const st = flow(); const i = st.indexOf(cur); if (i === st.length - 1) exitReadonly(); else go(st[i + 1]); return; }
+  const miss = missingIn(cur);
+  if (miss.length) { flagMissing(miss); return; }
+  const st = flow(); if (cur === st[st.length - 1]) { submit(); return; }
+  const steps = flow(); go(steps[steps.indexOf(cur) + 1]);
+});
+
+/* ---------- envio ---------- */
+function newId(){
+  try { return crypto.randomUUID(); } catch (e) { return 'r-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+}
+function buildPayload(){
+  const respostas = {};
+  REG.filter(r => !r.show).forEach(r => {
+    const v = isActive(r) ? g(r.name) : 'não se aplica';
+    respostas[r.name] = Array.isArray(v) ? v.join(' | ') : v;
+    if (r.def.detail) respostas[r.name + '_detalhe'] = isActive(r) && detailOn(r.name) ? detVal(r.name) : '';
+  });
+  const ingressos = selectedShows().map(k => {
+    const row = { apresentacao: SHOWS[k].city + ' ' + SHOWS[k].date };
+    TICKET_QS.forEach(q => { const r = REG.find(x => x.name === k + '_' + q.id); row[q.id] = isVisible(r) ? g(r.name) : 'não se aplica'; if (r.def.detail) row[q.id + '_detalhe'] = detailOn(r.name) ? detVal(r.name) : ''; });
+    return row;
+  });
+  return { id:newId(), enviado_em:new Date().toISOString(), perfil: naoFui(g) ? 'não foi ao show' : 'foi ao show', respostas, ingressos };
+}
+function showThanks(preview, payload){
+  form.querySelectorAll('[data-screen]').forEach(s => s.hidden = true);
+  document.getElementById('start').hidden = true;
+  document.getElementById('nav').hidden = true;
+  document.getElementById('progress').hidden = true;
+  document.getElementById('thanks').hidden = false;
+  document.body.classList.add('stage');
+  document.getElementById('previewBox').hidden = !preview;
+  if (preview) document.getElementById('payloadOut').textContent = JSON.stringify(payload, null, 2);
+  const v = document.getElementById('gifVid'); if (v) { try { const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {} }
+  window.scrollTo(0, 0);
+}
+function submit(){
+  const missing = REG.filter(r => !r.def.optional && isActive(r) && !answered(r.name));
+  if (missing.length) { go(screenOfQ(missing[0].name)); flagMissing(missing.filter(r => screenOfQ(r.name) === cur)); return; }
+  const payload = buildPayload();
+  if (!CONFIG.ENDPOINT) { showThanks(true, payload); return; }
+  const btn = document.getElementById('nextBtn');
+  btn.disabled = true; btn.textContent = 'Enviando...';
+  fetch(CONFIG.ENDPOINT, { method:'POST', mode:'no-cors', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body:JSON.stringify(payload) })
+    .then(() => showThanks(false, payload))
+    .catch(() => {
+      const e = document.getElementById('navErr');
+      e.textContent = 'Não foi possível enviar agora. Confira sua conexão e tente de novo.'; e.hidden = false;
+      btn.disabled = false; btn.textContent = 'Enviar respostas';
+    });
+}
+document.getElementById('againBtn').addEventListener('click', () => {
+  document.body.classList.remove('stage'); const st = flow(); go(st[st.length - 1]); });
+
+update();
+/* ---------- pesquisa encerrada ---------- */
+function showClosed(target){
+  document.getElementById('start').hidden = true;
+  document.getElementById('progress').hidden = true;
+  document.getElementById('nav').hidden = true;
+  form.querySelectorAll('[data-screen]').forEach(s => s.hidden = true);
+  document.getElementById('closed').hidden = false;
+  const el = target && document.getElementById(target);
+  if (el) el.scrollIntoView({ behavior:'smooth', block:'start' }); else window.scrollTo(0, 0);
+}
+function enterReadonly(){
+  READONLY = true;
+  form.classList.add('readonly');
+  form.querySelectorAll('input,select,textarea').forEach(e => e.disabled = true);
+  go('sobre');
+}
+function exitReadonly(){
+  READONLY = false;
+  form.classList.remove('readonly');
+  form.querySelectorAll('input,select,textarea').forEach(e => e.disabled = false);
+  update();
+  showClosed('cap-pesquisa');
+}
+document.getElementById('viewFormBtn').addEventListener('click', enterReadonly);
+document.getElementById('closed').addEventListener('click', e => {
+  const b = e.target.closest('[data-jump]'); if (!b) return;
+  if (b.dataset.jump === 'closed') { window.scrollTo({ top:0, behavior:'smooth' }); return; }
+  showClosed(b.dataset.jump);
+});
+if (CONFIG.FASE === 'encerrada' || location.hash === '#encerrada') showClosed();
+if (location.hash === '#obrigada') showThanks(false);
+</script>
+</body>
+</html>
