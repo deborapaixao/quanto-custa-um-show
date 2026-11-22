@@ -139,9 +139,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
 .q{position:relative}
 .q-chip{position:absolute;top:-1px;right:-1px;background:var(--riso);color:var(--ink);font:600 .66rem/1 var(--mono);letter-spacing:.06em;padding:5px 7px}
 .q-chip + .q-lbl{padding-right:62px}
-.detail{margin-top:10px;padding:10px 12px;border-left:3px solid var(--riso);background:var(--paper)}
+.detail{grid-column:1/-1;margin:-2px 0 4px;padding:10px 12px 12px;border:1.5px solid var(--riso);border-top:0;background:#FFEAF3}
 .detail-lbl{display:block;font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px}
-.detail input{background:var(--sheet)}
+.detail input{background:#fff;border-color:#F3B6D2}
 .note{border-left:4px solid var(--riso);background:var(--sheet);padding:12px 14px;font:400 .86rem/1.5 var(--mono);margin:0 0 14px}
 
 /* recibo */
@@ -301,6 +301,10 @@ form.readonly .ro-banner{display:block}
   .cards .opt span{min-height:70px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}}
+.q-lbl{background:#FBE6EF;margin:-18px -18px 0;padding:14px 18px 12px;border-bottom:1px solid #F1C9DB}
+.q .hint{margin-top:10px}
+#startQ .q-lbl{padding-left:18px}
+@media (max-width:460px){.q-lbl{margin:-16px -14px 0;padding:14px}}
 </style>
 </head>
 <body>
@@ -553,10 +557,9 @@ const SCREENS = [
   { id:'opiniao', title:'Sua opinião', qs:[
     { id:'mais_perto', type:'radio', label:'Se o mesmo show tivesse acontecido numa cidade mais perto de você, você teria ido nele em vez de viajar?', opts:['Sim, com certeza','Talvez','Não, viajaria mesmo assim'],
       when:g=>!naoFui(g) && g('relacao')!==LOCAL },
-    { id:'regionalizar', type:'radio', label:'O que você acha de o preço do ingresso variar de acordo com a região de onde a pessoa vem?', opts:['Muito injusto','Um pouco injusto','Não tenho opinião formada','Um pouco justo','Muito justo'] },
-    { id:'regionalizar_renda', type:'radio', label:'E se o preço variasse de acordo com a região e também com a renda de quem compra?', opts:['Muito injusto','Um pouco injusto','Não tenho opinião formada','Um pouco justo','Muito justo'] },
-    { id:'mais_justo', type:'check', max:2, exclusive:['Não sei opinar'], label:'O que mais ajudaria a tornar grandes shows acessíveis pra quem mora longe ou tem menos renda?', hint:'Escolha até 2 opções.', detailPh:'Qual seria a sua alternativa?',
-      opts:['Manter o mesmo preço para todos, como é hoje','Desconto no ingresso para quem mora longe da cidade do show','Levar a turnê para mais cidades e regiões do país','Preço de acordo com a renda de quem compra','Mais setores com ingressos mais baratos','Parcerias com descontos em passagem e hospedagem','Mais controle sobre cambismo e revenda abusiva','Outra alternativa','Não sei opinar'] },
+    { id:'preco_justo', type:'radio', label:'Na sua opinião, qual seria a forma mais justa de cobrar o ingresso?', opts:['O mesmo preço pra todo mundo, como é hoje','Mais barato pra quem mora longe da cidade do show','Mais barato pra quem tem menos renda','Mais barato pra quem mora longe e também tem menos renda','Não tenho opinião formada'] },
+    { id:'mais_justo', type:'check', max:2, exclusive:['Não sei opinar'], label:'Além do preço do ingresso, o que mais ajudaria a tornar grandes shows acessíveis?', hint:'Escolha até 2 opções.', detailPh:'Qual seria a sua alternativa?',
+      opts:['Levar a turnê para mais cidades e regiões do país','Mais setores com ingressos mais baratos','Parcerias com descontos em passagem e hospedagem','Mais opções de parcelamento sem juros','Mais controle sobre cambismo e revenda abusiva','Outra alternativa','Não sei opinar'] },
     { id:'relato', type:'textarea', optional:true, label:'Quer contar alguma experiência ou dificuldade com o custo de ir a shows?', placeholder:'Escreva à vontade.' }
   ]},
   { id:'fila', title:'Curiosidades da fila', lead:'Essa parte é opcional, só pela curiosidade.', qs:[
@@ -808,7 +811,16 @@ function update(){
     const echo = el.querySelector('[data-echo]');
     if (echo) { const raw = byName(r.name)[0].value; const n = parseMoney(raw); echo.hidden = n === null || !raw; if (n !== null) echo.textContent = fmt(n) + ' · ' + porExtenso(n); }
     const det = el.querySelector('[data-detail]');
-    if (det) det.hidden = !detailOn(r.name);
+    if (det) {
+      const on = detailOn(r.name);
+      det.hidden = !on;
+      /* a caixa "Descreva" abre logo abaixo da opção marcada que pede descrição */
+      if (on) {
+        const trig = [...el.querySelectorAll('.ctl .opts input:checked')].find(i => r.def.detail.on.includes(i.value));
+        const lab = trig && trig.closest('.opt');
+        if (lab && lab.nextElementSibling !== det) lab.after(det);
+      }
+    }
     if (vis && answered(r.name)) el.classList.remove('missing');
   });
   renumber();
