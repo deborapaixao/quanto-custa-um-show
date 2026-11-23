@@ -305,6 +305,11 @@ form.readonly .ro-banner{display:block}
 .q .hint{margin-top:10px}
 #startQ .q-lbl{padding-left:18px}
 @media (max-width:460px){.q-lbl{margin:-16px -14px 0;padding:14px}}
+.share{margin-top:28px;padding:18px;border:1.5px solid var(--paper);background:rgba(255,255,255,.04)}
+.share .share-t{font:700 1.15rem/1.3 var(--body);color:var(--paper)!important;margin:0 0 6px}
+.share-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.share-wa{text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center;font-size:1.1rem;min-width:220px}
+.share-copy{background:transparent;color:var(--paper);border-color:var(--paper)}
 </style>
 </head>
 <body>
@@ -473,6 +478,14 @@ form.readonly .ro-banner{display:block}
     <h2>Muito obrigada!</h2>
     <p>Sua resposta ajuda a entender o que pesa na hora de ir a um show.</p>
     <p>Quando a análise ficar pronta, os resultados vão aparecer neste mesmo link.</p>
+    <div class="share">
+      <p class="share-t">Conhece alguém que foi ou que não conseguiu ir?</p>
+      <p>Cada resposta faz diferença, e compartilhar a pesquisa já ajuda muito.</p>
+      <div class="share-btns">
+        <a class="btn btn-go share-wa" id="shareWa" href="#" target="_blank" rel="noopener">Compartilhar no WhatsApp</a>
+        <button type="button" class="btn share-copy" id="shareCopy">Copiar link</button>
+      </div>
+    </div>
     <div id="previewBox" hidden>
       <div class="note">Modo prévia: nada foi enviado. Quando a planilha estiver conectada, cada resposta vira uma linha.</div>
       <details><summary>Ver como a resposta chegaria na planilha</summary><pre id="payloadOut"></pre></details>
@@ -1008,6 +1021,13 @@ function submit(){
       btn.disabled = false; btn.textContent = 'Enviar respostas';
     });
 }
+const SHARE_MSG = 'Olá! Acabei de responder uma *pesquisa sobre os shows da Hayley Williams no Brasil* e estou compartilhando por aqui para ajudar a chegar a mais fãs!\n\nA pesquisa é para quem foi e também para quem não conseguiu ir. É anônima e leva cerca de 4 minutinhos.\n\nSe puder participar e compartilhar com outros fãs, vou agradecer muito! 💗\n🔗 ';
+const shareUrl = () => location.origin + location.pathname;
+document.getElementById('shareWa').addEventListener('click', e => { e.currentTarget.href = 'https://wa.me/?text=' + encodeURIComponent(SHARE_MSG + shareUrl()); });
+document.getElementById('shareCopy').addEventListener('click', e => {
+  const b = e.currentTarget, done = () => { b.textContent = 'Link copiado!'; setTimeout(() => b.textContent = 'Copiar link', 2000); };
+  try { navigator.clipboard.writeText(shareUrl()).then(done, () => prompt('Copie o link:', shareUrl())); } catch (err) { prompt('Copie o link:', shareUrl()); }
+});
 document.getElementById('againBtn').addEventListener('click', () => {
   document.body.classList.remove('stage'); const st = flow(); go(st[st.length - 1]); });
 
